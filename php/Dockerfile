@@ -9,5 +9,6 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
 RUN docker-php-ext-install mysqli gd
 RUN a2enmod rewrite
 RUN echo "<?php phpinfo(); " > /var/www/html/index.php
+RUN chmod 777 /var/www/html/index.php
 VOLUME [ "/var/www/html" ]
 EXPOSE 80 443
