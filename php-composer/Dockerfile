@@ -1,6 +1,7 @@
 FROM ubuntu:16.04
 LABEL maintainer "Best Sira <sirawat21@gmail.com>"
-RUN apt-get update -y \
+RUN add-apt-repository ppa:ondrej/php \
+    && apt-get update -y \
     && apt-get install -y --no-install-recommends libgd-dev \
     && apt-get install -y curl php-cli php-mbstring git unzip snmp \
     && apt-get install -y php7.1 php7.1-fpm php7.1-mysql mcrypt php7.1-mcrypt \
