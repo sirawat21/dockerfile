@@ -3,12 +3,12 @@ LABEL maintainer "Best Sira <sirawat21@gmail.com>"
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends libgd-dev \
     && apt-get install -y curl php-cli php-mbstring git unzip snmp \
-    && apt-get install -y php7.0 php7.0-fpm php7.0-mysql mcrypt php7.0-mcrypt \
-    && apt-get install -y php7.0-gd php7.0-intl php7.0-xsl php7.0-mbstring \
+    && apt-get install -y php7.1 php7.1-fpm php7.1-mysql mcrypt php7.1-mcrypt \
+    && apt-get install -y php7.1-gd php7.1-intl php7.1-xsl php7.1-mbstring \
     && rm -rf /var/lib/apt/lists/*
 RUN curl -sS https://getcomposer.org/installer -o composer-setup.php \
     && php composer-setup.php --install-dir=/usr/local/bin --filename=composer
-RUN echo "[PHP] \ndate.timezone = Asia/Bangkok \n short_open_tag = on " >> /etc/php/7.0/fpm/php.ini
+RUN echo "[PHP] \ndate.timezone = Asia/Bangkok \n short_open_tag = on " >> /etc/php/7.1/fpm/php.ini
 VOLUME /www
 WORKDIR /www
 CMD php -S 0.0.0.0:80 -t /www
