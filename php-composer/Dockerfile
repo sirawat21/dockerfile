@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 LABEL maintainer "Best Sira <sirawat21@gmail.com>"
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends libgd-dev \
-    && apt-get install -y curl php-cli php-mbstring git unzip \
+    && apt-get install -y curl php-cli php-mbstring git unzip snmp \
     && apt-get install -y php7.0 php7.0-fpm php7.0-mysql mcrypt php7.0-mcrypt \
     && apt-get install -y php7.0-gd php7.0-intl php7.0-xsl php7.0-mbstring \
     && rm -rf /var/lib/apt/lists/*
