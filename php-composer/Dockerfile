@@ -1,11 +1,9 @@
 FROM ubuntu:16.04
 LABEL maintainer "Best Sira <sirawat21@gmail.com>"
-RUN add-apt-repository ppa:ondrej/php \
-    && apt-get update -y \
+RUN apt-get update -y \
     && apt-get install -y --no-install-recommends libgd-dev \
     && apt-get install -y curl php-cli php-mbstring git unzip snmp \
-    && apt-get install -y php7.1 php7.1-fpm php7.1-mysql mcrypt php7.1-mcrypt \
-    && apt-get install -y php7.1-gd php7.1-intl php7.1-xsl php7.1-mbstring \
+    && apt-get install php7.1 php7.1-cli php7.1-common php7.1-json php7.1-opcache php7.1-mysql php7.1-mbstring php7.1-mcrypt php7.1-zip php7.1-fpm \
     && rm -rf /var/lib/apt/lists/*
 RUN curl -sS https://getcomposer.org/installer -o composer-setup.php \
     && php composer-setup.php --install-dir=/usr/local/bin --filename=composer
