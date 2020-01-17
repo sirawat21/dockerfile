@@ -1,10 +1,8 @@
 FROM ubuntu:latest
 LABEL maintainer "Best Sira <sirawat21@gmail.com>"
 RUN apt-get update -y \
-    && apt-get install -y git npm nodejs \
-    && npm update \
+    && ap-get install -y git npm nodejs
+RUN npm update \
     && npm insall -g nodemon \
     && npm install
-VOLUME ["/www"]
 WORKDIR /www
-EXPOSE 80 443
